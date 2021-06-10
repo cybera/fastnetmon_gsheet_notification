@@ -58,11 +58,16 @@ the tool and generate credentials. Please use your web browser and go to https:/
    -  Leave **Key type** as **JSON**
    -  Click **Create** and store the downloaded file on your file system.
 
-5. Place the credentials.json file in `Users/<username>/.config/gspread/`. Please keep in mind that this is a private key and should be handled with care.
+5. Rename the file to `fnm_google_notify.json` and save it to `~/.fnm_google_notify.json`.
 
-6. Set your spreadsheet url in the script under `googleurl`
+6. Open `~/.fnm_google_notify.json` and add an additional field of the URL to the
+spreadsheet to save the data to:
 
-6. Run use the script with the following syntax:
+```
+"sheet_url": "https://docs.google.com/spreadsheets/d.....",
+```
+
+6. Test the script with the following syntax:
 
 ```
 cat ban.json | python notify_json_v2.py ban 192.168.1.1
