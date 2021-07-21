@@ -22,10 +22,7 @@ DEBUG = False
 if os.getenv('FNM_DEBUG', False) is not False:
     DEBUG = True
 
-config_file = '/tmp/fnm_google_notify.json'
-home = os.getenv('HOME')
-if home is not None:
-    config_file = "%s/.fnm_google_notify.json" % (home)
+config_file = "/etc/fastnetmon/.fnm_google_notify.json"
 
 try:
     with open(config_file) as j:
